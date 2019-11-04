@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0px;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+#game {
+  width: 100%;
+}
+
+#board {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+#board button, #board #flag, #board #timer {
+  width: 30%;
+  height: 3rem;
+  line-height: 3rem;
+  margin-bottom: -1px;
+}
+
+#board button {
+  border: none; 
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  background: linear-gradient(grey, black);
+  color: white;
+}
+
+#board button:hover {
+  background: linear-gradient(black, rgb(39, 39, 39));
+}
+
+#board #flag {
+  border-left: 1px solid black;
+}
+
+#board #flag::after {
+  content: '🚩';
+}
+
+#board #timer::after{
+  content: 's';
+}
+
+#flag.on {
+  background: linear-gradient(rgb(236, 65, 65),red);
+}
+
+#tile-map {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+}
+
+.tile {
+  height: 12.5vw;
+  width: 12.5vw;
+  border: 1px solid black;
+  line-height: 12.5vw;
+  text-align: center;
+  background: rgb(161, 161, 161);
+  cursor: pointer;
+}
+
+.tile.check {
+  background: white;
+  cursor: default;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.tile.check-fail {
+  cursor: default;
+  background: rgb(161, 161, 161);
+  cursor: default;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.tile.mine {
+  background: rgb(255, 72, 72);
+}
+
+.tile.wrong-flag {
+  background: rgb(255, 72, 72);
+}
+
+.tile.color-1 {
+  color: rgb(28, 62, 255);
+}
+
+.tile.color-2 {
+  color: rgb(2, 133, 2);
+}
+
+.tile.color-3 {
+  color: red;
+}
+
+.tile.color-4 {
+  color: purple;
+}
+
+.tile.color-5 {
+  color: rgb(146, 95, 0);
+}
+
+.tile.color-6 {
+  color: rgb(0, 58, 0);
+}
+
+.tile.color-7 {
+  color: black;
+}
+
+.tile.color-8 {
+  color: grey;
+}
+
+@media screen and (min-width: 720px) {
+  #game {
+    margin: auto;
+    max-width: 720px;
+  }
+
+  #board #flag {
+    border-right: 1px solid black;
+  }
+
+  .tile {
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+  }
+}
